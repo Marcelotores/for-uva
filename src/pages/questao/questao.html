@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Lista de Questões</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <div *ngFor="let q of questao">
+    <p>
+      {{ q.id }}. ( {{ q.universidade }} ) - {{ q.enunciado }}
+    </p>
+    <ion-list radio-group [(ngModel)]="relationship" *ngFor="let alternativa of alternativas">
+      <ion-item no-lines>
+        <ion-label >{{ alternativa.letra }}) {{ alternativa.texto }}</ion-label>
+        <ion-radio value="{{ alternativa.letra }}"></ion-radio>
+      </ion-item>
+    </ion-list>
+  </div>
+
+  <button ion-button (click)="onResposta()">Responder</button>
+
+  <button ion-button (click)="proxQuestao()">Próxima</button>
+
+  <button ion-button (click)="onfinalize()">Finalizar</button>
+
+</ion-content>

@@ -24,7 +24,6 @@ $app-direction: ltr;
 
 
 
-
 // Named Color Variables
 // --------------------------------------------------
 // Named colors makes it easy to reuse colors on various components.
@@ -41,7 +40,11 @@ $colors: (
   dark:       #222
 );
 
-
+/*
+.ion-navbar {
+  color: #32db64;
+}
+*/
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here

@@ -1,0 +1,40 @@
+<ion-header>
+
+  <ion-navbar color="secondary">
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <form [formGroup]="f">
+
+    <div *ngIf="!loginProvider.check()">
+
+      <ion-list>
+
+        <ion-item>
+          <ion-label floating>E-mail</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Senha</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+
+
+
+      </ion-list>
+
+      <button ion-button color="secondary" outline large block [disabled]="f.invalid" (click)="onSubmit()">Entrar</button>
+      <button ion-button color="primary" outline large block (click)="onSubmit()">Cadastrar</button>
+
+
+    </div>
+
+  </form>
+
+</ion-content>
